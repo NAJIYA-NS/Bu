@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartSpend</title>
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/128/7892/7892621.png">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ojuju&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz@0,6..12;1,6..12&display=swap" rel="stylesheet">
+
+    <style>
+        .btn-custom-copper {
+            color: #B87333;
+            /* This changes the text color to Copper */
+            border-color: #B87333;
+            /* This changes the border color to Copper */
+        }
+
+        .btn-custom-copper:hover {
+            background-color: #B87333;
+            /* Copper background on hover */
+            color: #ffffff;
+            /* White text on hover for better readability */
+        }
+
+        .btn-primary {
+            background-color: #B87333 !important;
+            /* Copper background */
+            border-color: #B87333 !important;
+            /* Copper border */
+        }
+
+        .btn-primary:hover {
+            background-color: #96502B !important;
+            /* Darker shade of copper for hover */
+            border-color: #96502B !important;
+            /* Consistent border color on hover */
+        }
+
+        .navbar {
+            position: relative;
+        }
+
+        .navbar::after {
+            content: '';
+            position: absolute;
+            width: calc(100% - 40px);
+            /* Adjust the gap by changing the value (e.g., 20px) */
+            height: 2px;
+            bottom: 0;
+            left: 20px;
+            /* Half of the gap value */
+            background-color: #B87333;
+        }
+    </style>
+
+</head>
+
+<body style="background-color:#F5F5DC; overflow-x: hidden;">
+
+    <nav class="navbar navbar-transparent">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="display: flex;">
+                <i class="fa-solid fa-calculator fa-fade fa-2xl mt-3 ms-2 me-2" style="color: #b87333;"></i>
+                <h3 style="color: #36454F;">
+                    <span style="color: #b87333;">S</span>mart<span style="color: #b87333;">S</span>pend
+                </h3>
+            </a>
+            <div class="d-flex">
+                <a href="./login.html"><button type="button" class="btn btn-custom-copper mt-3 mb-3 ms-3 me-1">
+                    <h6>Login</h6>
+                </button></a>
+
+               <a href="./register.html"><button type="button" class="btn btn-primary mt-3 mb-3 ms-1 me-3">
+                <h6>Register</h6>
+            </button></a>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <div class="row m-5" >
+        <center>
+        <h1 style="color: #36454F; font-family: Nunito Sans, sans-serif; font-weight: 600; margin-top: 30px;" ><Span style="color: #B87333;">S</Span>mart<span style="color: #B87333;">S</span>pend</h1>
+           <p style="font-weight: 500; color: #B87333;">"Budget Better, Live Smarter."</p>
+
+        </center>
+        <div class="col-6 text-center mt-5" >
+            <h2 style="color: #B87333; font-family: Nunito Sans, sans-serif; font-weight: 600;  margin-left: 95px;">Login <img src="https://cdn-icons-png.flaticon.com/128/295/295128.png" alt="" height="50px"></h2>
+            
+            <hr style="border-color: #36454F; border-width: 2px; width: 75%; margin: 10px auto; margin-left: 125px;">
+        
+            <input type="text" id="loginuname" placeholder="Username" class="form-control mt-4" style="width: 400px; margin-left: 135px;">
+            <input type="password" id="loginpswd" placeholder="Password" class="form-control mt-2" style="width: 400px; margin-left: 135px;">
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary mt-4" onclick="login()" type="button" style="width: 400px; margin-left: 135px;">Login</button>
+              </div>
+
+            <span style="color:#36454F;">Don't have an account? <a href="./register.html" style="color: #36454F;">Register</a></span>
+
+            
+        </div>
+        
+        <div class="col-6 text-center">
+            <img src="./gifs/12.gif" alt="" style="margin-top: 50px;" width="60%" height="300px">
+        </div>
+    </div>
+    <footer class="text-center text-lg-start text-light" style="background-color: #B87333;">
+        <!-- Copyright -->
+        <div class="text-center text-light p-3">
+          © 2020 Copyright:
+          <a class="text-body" style="color: white;" href="">NajiyaNasrin</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+
+
+</body>
+<script src="./budget.js"></script>
+</html>
