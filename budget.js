@@ -17,7 +17,7 @@ function register(){
     else{
         localStorage.setItem(uname, JSON.stringify(userDetails))
         alert("User Registered Successfully")
-        window.location='./login.html'
+        window.location='./index.html'
     }
 
 }
@@ -191,5 +191,5 @@ function clearall() {
 
 function logout(){
     localStorage.clear();
-    window.location='./login.html'
+    window.location='./index.html'
 }
