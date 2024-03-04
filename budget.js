@@ -31,7 +31,7 @@ function login() {
     if (uname in localStorage) {
         userDetails = JSON.parse(localStorage.getItem(uname))
         if (pswd == userDetails.pswd) {
-            // localStorage.setItem('currentUser',uname);
+            localStorage.setItem("currentUser",uname);
             alert('Login Successful')
             window.location = './home.html'
             
@@ -47,7 +47,8 @@ function login() {
     }
 }
 
-
+const currentUser=localStorage.getItem("currentUser")
+user.innerHTML= `<h4><i class="fa-solid fa-user fa-fade" style="color: #b87333; margin-right: 10px;"></i>${currentUser}</h4>`
 // AddIncome
 
 let totalbalance = 0
