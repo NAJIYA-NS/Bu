@@ -93,7 +93,7 @@ function addIncome() {
         // localStorage.setItem(uname, totalbalance)
     }
 }
-
+let expense=0;
 function addExpense() {
 
     type = expensetype.value
@@ -108,10 +108,11 @@ function addExpense() {
         const formattedDate = currentDate.toLocaleString();
 
         totalbalance -= amnt;
+        expense+=amnt
 
         alert('Expense added successfully')
         resultbalance.innerHTML = `<h3 style="color: #F5F5DC; margin-top: 45px;">Rs ${totalbalance}/-</h3>`
-        resultexpense.innerHTML = `<h3 style="color: #F5F5DC; margin-top: 45px;">Rs ${amnt}/-</h3>`
+        resultexpense.innerHTML = `<h3 style="color: #F5F5DC; margin-top: 45px;">Rs ${expense}/-</h3>`
 
         expensetableresult.innerHTML += `<tbody>
         <td style="background-color:#9bacbf; border-bottom:5px #556B2F solid; height:45px;">${type}</td>
