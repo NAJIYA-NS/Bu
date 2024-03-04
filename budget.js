@@ -1,108 +1,118 @@
-function register(){
-    uname=reguname.value
-    email=regemail.value
-    pswd=regpswd.value
+function register() {
+    uname = reguname.value
+    email = regemail.value
+    pswd = regpswd.value
 
-    console.log(uname,email,pswd);
+    console.log(uname, email, pswd);
 
-    userDetails={
+    userDetails = {
         uname,
         email,
         pswd
     }
 
-    if(uname in localStorage){
+    if (uname in localStorage) {
         alert("Existing User")
     }
-    else{
+    else {
         localStorage.setItem(uname, JSON.stringify(userDetails))
         alert("User Registered Successfully")
-        window.location='./index.html'
+        window.location = './index.html'
     }
 
 }
 
-function login(){
-    uname=loginuname.value
-    pswd=loginpswd.value
+function login() {
+    uname = loginuname.value
+    pswd = loginpswd.value
 
-    console.log(uname,pswd);
+    console.log(uname, pswd);
 
-    if(uname in localStorage){
-        userDetails=JSON.parse(localStorage.getItem(uname))
-        if(pswd==userDetails.pswd){
+    if (uname in localStorage) {
+        userDetails = JSON.parse(localStorage.getItem(uname))
+        if (pswd == userDetails.pswd) {
+            // localStorage.setItem('currentUser',uname);
             alert('Login Successful')
-            window.location='./home.html'
+            window.location = './home.html'
+            
         }
-        else{
+        else {
             alert('Incorrect Password')
         }
     }
-    else{
+    else {
         alert("User Does Not Exist")
+        alert("Register Your Account")
+        window.location = './register.html'
     }
 }
 
+
 // AddIncome
 
-let totalbalance=0
-function addIncome(){
+let totalbalance = 0
+function addIncome() {
 
-    type=incometype.value
-    amnt=incomeamnt.value
-    amnt=Math.floor(amnt)
+    type = incometype.value
+    amnt = incomeamnt.value
+    amnt = Math.floor(amnt)
 
-    income={
+    income = {
         type,
-        amnt
+        amnt,
+        // balance:0
     }
 
     // const uname=loginuname.value
     // userDetails=JSON.parse(localStorage.getItem(uname));
 
-    if(type==''|| amnt<=0 || amnt==''){
+    if (type == '' || amnt <= 0 || amnt == '') {
         alert('Field cannot be empty')
     }
-    else{
+    else {
 
         const currentDate = new Date();
         const formattedDate = currentDate.toLocaleString();
 
-        totalbalance+=amnt;
+        totalbalance += amnt;
 
         alert("Amount added successfully")
-        resultbalance.innerHTML=`<h3 style="color: #F5F5DC; margin-top: 45px;">Rs ${totalbalance}/-</h3>`
-        incometableresult.innerHTML+=`<tbody>
+        resultbalance.innerHTML = `<h3 style="color: #F5F5DC; margin-top: 45px;">Rs ${totalbalance}/-</h3>`
+        incometableresult.innerHTML += `<tbody>
         <td style="background-color:#9bacbf; border-bottom:5px #556B2F solid; height:45px;">${income.type}</td>
         <td style="background-color:#9bacbf; border-bottom:5px #556B2F solid; height:45px;">+${income.amnt}</td>
         <td style="background-color:#9bacbf; border-bottom:5px #556B2F solid; height:45px;">${totalbalance}</td>
         <td style="background-color:#9bacbf; border-bottom:5px #556B2F solid; height:45px;">${formattedDate}</td>
         </tbody>`
 
+        // income.balance+=totalbalance
+        // uname=localStorage.getItem(uname in localStorage)
+        // localStorage.setItem(uname, JSON.stringify(income))
+
         // localStorage.setItem(uname, totalbalance)
     }
 }
 
-function addExpense(){
+function addExpense() {
 
-    type=expensetype.value
-    amnt=expenseamnt.value
-    amnt=Math.floor(amnt)
+    type = expensetype.value
+    amnt = expenseamnt.value
+    amnt = Math.floor(amnt)
 
-    if(type==''|| amnt==''||amnt<=0){
+    if (type == '' || amnt == '' || amnt <= 0) {
         alert('Field cannot be empty')
     }
-    else{
+    else {
         const currentDate = new Date();
         const formattedDate = currentDate.toLocaleString();
 
-        totalbalance-=amnt;
-        
-        alert('Expense added successfully')
-        resultbalance.innerHTML=`<h3 style="color: #F5F5DC; margin-top: 45px;">Rs ${totalbalance}/-</h3>`
-        resultexpense.innerHTML=`<h3 style="color: #F5F5DC; margin-top: 45px;">Rs ${amnt}/-</h3>`
+        totalbalance -= amnt;
 
-        expensetableresult.innerHTML=`<tbody>
+        alert('Expense added successfully')
+        resultbalance.innerHTML = `<h3 style="color: #F5F5DC; margin-top: 45px;">Rs ${totalbalance}/-</h3>`
+        resultexpense.innerHTML = `<h3 style="color: #F5F5DC; margin-top: 45px;">Rs ${amnt}/-</h3>`
+
+        expensetableresult.innerHTML += `<tbody>
         <td style="background-color:#9bacbf; border-bottom:5px #556B2F solid; height:45px;">${type}</td>
         <td style="background-color:#9bacbf; border-bottom:5px #556B2F solid; height:45px;">+${amnt}</td>
         <td style="background-color:#9bacbf; border-bottom:5px #556B2F solid; height:45px;">${totalbalance}</td>
@@ -134,16 +144,16 @@ function clearall() {
 
 // function showPie() {
 //     console.log('showPie function called');
-    
+
 //     const expenseLabels = [];
 //     const expenseAmounts = [];
 //     const expenseColors = [];
 
-    
+
 
 //     // Assuming your expenses are stored in expensetableresult
 //     const expenseRows = document.getElementById('expensetableresult').getElementsByTagName('tr');
-    
+
 
 //     for (let i = 0; i < expenseRows.length; i++) {
 //         const cells = expenseRows[i].getElementsByTagName('td');
@@ -189,7 +199,7 @@ function clearall() {
 
 
 
-function logout(){
+function logout() {
     localStorage.clear();
-    window.location='./index.html'
+    window.location = './index.html'
 }
