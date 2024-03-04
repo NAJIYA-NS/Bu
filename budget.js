@@ -114,7 +114,7 @@ function addExpense() {
 
         expensetableresult.innerHTML += `<tbody>
         <td style="background-color:#9bacbf; border-bottom:5px #556B2F solid; height:45px;">${type}</td>
-        <td style="background-color:#9bacbf; border-bottom:5px #556B2F solid; height:45px;">+${amnt}</td>
+        <td style="background-color:#9bacbf; border-bottom:5px #556B2F solid; height:45px;">-${amnt}</td>
         <td style="background-color:#9bacbf; border-bottom:5px #556B2F solid; height:45px;">${totalbalance}</td>
         <td style="background-color:#9bacbf; border-bottom:5px #556B2F solid; height:45px;">${formattedDate}</td>
         </tbody>`
